@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+<div id="form">
+
+	<div  class="card">
+		<div class="container ">
+			<div class="form-group">
+				<label for="numberOfGames1">Number of Games</label>
+				<select class=" " id="numberOfGames">
+					<option value="1" name="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+			<div>
+				<label for="typeOfGames1">Lotto Type</label>
+				<select  class=" " id="typeOfGame">
+					<option value="UKLotto">UK Lotto</option>
+					<option value="EuroLotto">Euro Lotto</option>
+					<option value="IrishLotto">Irish Lotto</option>
+					<option value="USLotto">US MegaMillions</option>
+				</select>
+			</div>
+			<br>
+
+
+
+			<div class="col"></div>
+			<br>
+			<button type="submit" hx-post="{% url 'clicked' %}" hx-trigger="click change" hx-target="#numbers" hx-swap="beforeend ">GET MY LUCKY NUMBERS</button>
+			<br>
+			<br>
+			<div class="card">
+				<div id="numbers" class="card-body">
+					<div class="row">
+						<div class="col">
+							<h3>Main Numbers</h3>
+						</div>
+						<div class="col">
+							<h3>Bonus Numbers</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>{% endblock content %}

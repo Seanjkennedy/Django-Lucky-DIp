@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+    {% block content %}
+
+
+      <div class="card">
+        <div class="container ">
+
+            <div class="form-group">
+                <label for="numberOfGames1">Number of Games</label>
+                <select class=" " id="numberOfGames">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+            </div>
+            <div>
+
+                 <label for="typeOfGames1">Lotto Type</label>
+                <select class=" " id="typeOfGame">
+                  <option value="UK">UK Lotto</option>
+                  <option value="Euro">Euro Lotto</option>
+                  <option value="Irish">Irish Lotto</option>
+                  <option value="US">US MegaMillions</option>
+                </select>
+              </div>
+            <br>
+            
+              <!-- <form>
+                <div class="form-group">
+                  <label for="formControlRange">Example Range input</label>
+                  <input type="range" class="form-control-range" id="formControlRange">
+                </div>
+              </form> -->
+
+<!--              <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input" type="radio" name="gameChoice" id="inlineRadio1" value="UKLotto">-->
+<!--                <label class="form-check-label" for="inlineRadio1">UK Lotto</label>-->
+<!--              </div>-->
+<!--              <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input" type="radio" name="gameChoice" id="inlineRadio2" value="EuroLotto">-->
+<!--                <label class="form-check-label" for="inlineRadio2">Euro Lotto</label>-->
+<!--              </div>-->
+<!--              <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input" type="radio" name="gameChoice" id="inlineRadio3" value="IrishLotto">-->
+<!--                <label class="form-check-label" for="inlineRadio3">Irish Lotto</label>-->
+<!--              </div>-->
+<!--              <div class="form-check form-check-inline">-->
+<!--                <input class="form-check-input" type="radio" name="gameChoice" id="inlineRadio4" value="USLotto">-->
+<!--                <label class="form-check-label" for="inlineRadio4">US MegaMillions</label>-->
+<!--              </div>-->
+<!--        </div>-->
+
+            <div class="col"></div>
+
+            <div>
+
+                <br>
+
+
+                <button    type="submit"
+                           hx-put="{% url 'clicked' %}"
+                           hx-trigger="click"
+                           hx-target="#numbers"
+                           hx-swap="outerHTML">
+                    GET MY LUCKY NUMBERS </button>
+                <br>
+                <br>
+                <div class="card">
+                    <div id="numbers" class="card-body">
+                        {% if not main_ball %}
+                            Your Lucky Numbers Will Appear Here.
+                        {% endif %}
+
+                    </div>
+
+        </div>
+        </div>
+            <div class="dropdown-menu">
+  <form class="px-4 py-3">
+    <div class="form-group">
+      <label for="exampleDropdownFormEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleDropdownFormPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+        <label class="form-check-label" for="dropdownCheck">
+          Remember me
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">New around here? Sign up</a>
+  <a class="dropdown-item" href="#">Forgot password?</a>
+</div>
+    {% endblock content %}

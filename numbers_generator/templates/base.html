@@ -1,0 +1,36 @@
+<html>
+  <head>
+       {% load static %}
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'lottocss.css' %}">
+ </head>
+
+  <body>
+    <div class="col container " align="center">
+
+        <div class="row container " style="justify-content: center">
+
+          <img src="{% static 'UKlotto.png' %}" style="margin: 0px 50px;">
+          <img src="{% static 'EuroLotto.png' %}" style="margin: 0px 50px;">
+          <img src="{% static 'USlotto.png' %}" style="margin: 0px 50px;">
+          <img src="{% static 'Irishlotto.png' %}" style="margin: 0px 50px;">
+
+        </div>
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <script src="https://unpkg.com/htmx.org@1.1.0"></script>
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      })
+    </script>
+
+
+  </body>
+
+</html>
