@@ -1,66 +1,56 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
+<form id="form" hx-post="{% url 'clicked' %}" hx-target="#numbers" hx-swap="beforeend">
 
+	{% csrf_token %}
 
-<form id="form"  hx-post="{% url 'clicked' %}"  hx-target="#numbers" hx-swap="beforeend" >
-{% csrf_token %}
-	<div  class="card">
-
+	<div class="card">
 		<div class="container ">
-<!--			<p></p>-->
-		<div class="container ">
-			<br>
-			<br>
-			<div class="row">
-
-				<div class="col">
-
-			<div class="form-group">
-
-				<label for="numberOfGames1">Number of Games</label>
-				<select id="numberOfGames" value="1" name="numberOfGames">
-					<option value="1" name="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-				</select>
-
-			</div>
-			</div>
-
-			<div class="col">
-			<div>
-				<label for="typeOfGames">Lotto Type</label>
-				<select   id="typeOfGame" name="typeOfGame">
-					<option value="UKLotto">UK Lotto</option>
-					<option value="EuroLotto">Euro Lotto</option>
-					<option value="IrishLotto">Irish Lotto</option>
-					<option value="USLotto">US MegaMillions</option>
-				</select>
-			</div>
-			</div>
-		</div>
-
-			<button type="submit" hx-trigger="click">GET MY LUCKY NUMBERS</button>
-<!--			<button type="submit" hx-post="{% url 'clicked' %}" hx-trigger="click" hx-target="#numbers" hx-swap="beforeend ">GET MY LUCKY NUMBERS</button>-->
-			<br>
-			<br>
-			<div class="card container" style="background-color: #DBF9FC;">
-				<div id="numbers" class="card-body" >
-					<div class="row" align="center">
-						<div class="col container" style="justify-content: center">
-							<h3 >Main Numbers</h3>
-						</div>
-						<div class="col container">
-							<h3>Bonus Numbers</h3>
+			<div class="container ">
+				<br>
+				<br>
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label for="numberOfGames1">Number of Games</label>
+							<select id="numberOfGames" value="1" name="numberOfGames">
+								<option value="1" name="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
 						</div>
 					</div>
-					<br>
+					<div class="col">
+						<div>
+							<label for="typeOfGames">Lotto Type</label>
+							<select id="typeOfGame" name="typeOfGame">
+								<option value="UKLotto">UK Lotto</option>
+								<option value="EuroLotto">Euro Lotto</option>
+								<option value="IrishLotto">Irish Lotto</option>
+								<option value="USLotto">US MegaMillions</option>
+								<option value="PowerBall">US PowerBall</option>
+							</select>
+						</div>
+					</div>
 				</div>
-			</div>
-
-
+				<button type="submit" hx-trigger="click">GET MY LUCKY NUMBERS</button>
+				<br>
+				<br>
+				<div class="card container" style="background-color: #DBF9FC;">
+					<div id="numbers" class="card-body">
+						<div class="row" align="center">
+							<div class="col container" style="justify-content: center">
+								<h3>Main Numbers</h3>
+							</div>
+							<div class="col container">
+								<h3>Bonus Numbers</h3>
+							</div>
+						</div>
+						<br>
+					</div>
+				</div>
 </form>
 
-
-		{% endblock content %}
+{% endblock content %}

@@ -7,5 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path('clicked/', views.clicked, name="clicked"),
-    # path('dropdown/', views.dropdown, name="dropdown"),
 ]
