@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('lotto', include('numbers_generator.urls')),
+    path('', include('numbers_generator.urls')),
     path('admin/', admin.site.urls),
 ]

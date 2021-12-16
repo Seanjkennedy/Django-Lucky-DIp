@@ -4,16 +4,26 @@
     {% load static %}
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{% static 'lottocss.css' %}">
-</head>
+</head >
 
-<body>
+<body id="main">
 	<div class="col container " align="center">
 		<div class="row container " style="justify-content: center">
-			<img src="{% static 'UKlotto.png' %}" style="margin: 0px 50px;">
-			<img src="{% static 'EuroLotto.png' %}" style="margin: 0px 50px;">
-			<img src="{% static 'USlotto.png' %}" style="margin: 0px 50px;">
-			<img src="{% static 'PowerBall.png' %}" style="margin: 0px 50px;">
-			<img src="{% static 'Irishlotto.png' %}" style="margin: 0px 50px;">
+			<a href="https://www.national-lottery.co.uk/games/lotto?icid=-:mm:-:mdg:lo:dbg:pl:co">
+				<img src="{% static 'UKlotto.png' %}" style="margin: 0px 50px;" width="120" height="120">
+			</a>
+			<a href="https://www.national-lottery.co.uk/games/euromillions?icid=-:mm:-:mdg:em:dbg:pl:co">
+				<img src="{% static 'EuroLotto.png' %}" style="margin: 0px 50px;"width="120" height="120">
+			</a>
+			<a href="https://www.megamillions.com/">
+				<img src="{% static 'USlotto.png' %}" style="margin: 0px 50px;"width="120" height="120">
+			</a>
+			<a href="https://www.powerball.com/games/home">
+				<img src="{% static 'PowerBall.png' %}" style="margin: 0px 50px;"width="120" height="120">
+			</a>
+			<a href="https://www.lottery.ie/draw-games/lotto">
+				<img src="{% static 'Irishlotto.png' %}" style="margin: 0px 50px;"width="120" height="120">
+			</a>
 		</div>
 	</div>
 
